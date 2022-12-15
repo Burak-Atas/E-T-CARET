@@ -1,2 +1,5 @@
-#E-TICARET
+#E-TICARET   
+
+**MONGODB ye hakim değilim.**
+
 
