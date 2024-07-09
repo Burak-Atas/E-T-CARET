@@ -12,7 +12,7 @@ import (
 )
 
 func DBSet() *mongo.Client {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://development:testpassword@localhost:27017"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://burak:Burak1234@ecommerce.d7pjc6o.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,10 +37,24 @@ var Client *mongo.Client = DBSet()
 func UserData(client *mongo.Client, CollectionName string) *mongo.Collection {
 	var collection *mongo.Collection = client.Database("Ecommerce").Collection(CollectionName)
 	return collection
-
 }
 
 func ProductData(client *mongo.Client, CollectionName string) *mongo.Collection {
+	var productcollection *mongo.Collection = client.Database("Ecommerce").Collection(CollectionName)
+	return productcollection
+}
+
+func CategoryData(client *mongo.Client, CollectionName string) *mongo.Collection {
+	var productcollection *mongo.Collection = client.Database("Ecommerce").Collection(CollectionName)
+	return productcollection
+}
+
+func IsContoData(client *mongo.Client, CollectionName string) *mongo.Collection {
+	var productcollection *mongo.Collection = client.Database("Ecommerce").Collection(CollectionName)
+	return productcollection
+}
+
+func MySparis(client *mongo.Client, CollectionName string) *mongo.Collection {
 	var productcollection *mongo.Collection = client.Database("Ecommerce").Collection(CollectionName)
 	return productcollection
 }
